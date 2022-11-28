@@ -1,0 +1,7 @@
+.navbar {
+  &--container {
+    position: sticky;
+    background-color: red;
+    width: spacing(medium_2);
+  }
+}

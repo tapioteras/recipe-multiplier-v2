@@ -4,6 +4,12 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  @include dark {
+    color-scheme: dark;
+    color: white;
+    background: black;
+  }
 }
 
 a {
@@ -15,12 +21,28 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+$breakpoints: (
+  mobile-s: 320px,
+  mobile: 480px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1400px,
+);
+
+$spacings: (
+  mini: 4px,
+  small: 8px,
+  medium_1: 16px,
+  medium_2: 24px,
+  medium_3: 32px,
+  large_1: 40px,
+  large_2: 48px,
+);
+
+@function breakpoint($device) {
+  @return map-get($breakpoints, $device);
+}
+
+@function spacing($spacing) {
+  @return map-get($spacings, $spacing);
 }
