@@ -10,25 +10,6 @@ import { getAnalytics, isSupported } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAYXgcp4Ykzk1XhzrRfuz4TtK7bFa9-HPc",
-  authDomain: "recipe-multiplier-70883.firebaseapp.com",
-  databaseURL:
-    "https://recipe-multiplier-70883-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "recipe-multiplier-70883",
-  storageBucket: "recipe-multiplier-70883.appspot.com",
-  messagingSenderId: "580152422655",
-  appId: "1:580152422655:web:4b12cbc073c9c66c869cca",
-  measurementId: "G-V5T306CVHK",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = isSupported().then((yes) => (yes ? getAnalytics(app) : null));
-
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
