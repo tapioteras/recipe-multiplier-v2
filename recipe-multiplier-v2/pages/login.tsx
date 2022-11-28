@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
-import { useAuthState } from "react-firebase-hooks/auth";
+
 import { uiConfig } from "../config/firebaseAppConfig";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { getAuth } from "firebase/auth";
+import { useLoginContext } from "../context/loginContext";
 
 const LoginPage = () => {
-  const [user, loading, error] = useAuthState(getAuth());
+  const { user, loading, error } = useLoginContext();
   const router = useRouter();
 
   if (loading) return <div>Loading...</div>;
