@@ -1,11 +1,10 @@
 import Navbar from "./navbar";
 
 const Layout = ({ children }) => (
-  <div className="layout--container">
+  <>
     <Navbar />
-    layout here
-    {children}
-  </div>
+    <div className="layout--container">{children}</div>
+  </>
 );
 
 export default Layout;

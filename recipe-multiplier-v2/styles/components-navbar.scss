@@ -1,7 +1,20 @@
 .navbar {
   &--container {
+    position: -webkit-sticky; /* Safari */
     position: sticky;
-    background-color: red;
-    width: spacing(medium_2);
+    padding: spacing(medium_1) spacing(medium_2);
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    top: 0;
+    background-color: var(--white);
+    @include dark {
+      background-color: var(--palette-grey-600);
+    }
+  }
+  &--profile-section {
+    &--picture {
+      border-radius: 50%;
+    }
   }
 }
