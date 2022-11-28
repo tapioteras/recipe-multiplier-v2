@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
 
-import { uiConfig } from "../config/firebaseAppConfig";
+import { auth, uiConfig } from "../config/firebaseAppConfig";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import { getAuth } from "firebase/auth";
 import { useLoginContext } from "../context/loginContext";
 
 const LoginPage = () => {
@@ -16,14 +15,12 @@ const LoginPage = () => {
     router.push("/");
   }
 
-  const authConfig = uiConfig();
-
   return (
     <div>
       <div>
         <h1>Log In to</h1>
       </div>
-      <StyledFirebaseAuth uiConfig={authConfig} firebaseAuth={getAuth()} />
+      <StyledFirebaseAuth uiConfig={uiConfig()} firebaseAuth={auth} />
     </div>
   );
 };

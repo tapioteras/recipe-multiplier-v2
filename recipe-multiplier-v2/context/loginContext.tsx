@@ -1,6 +1,7 @@
-import { getAuth, User } from "firebase/auth";
+import { User } from "firebase/auth";
 import { createContext, useContext, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../config/firebaseAppConfig";
 
 interface ILoginPageContext {
   user?: User | null;
@@ -11,7 +12,7 @@ interface ILoginPageContext {
 export const LoginContext = createContext<ILoginPageContext>(undefined);
 export const useLoginContext = () => useContext(LoginContext);
 export const LoginContextProvider = ({ children }) => {
-  const [user, loading, error] = useAuthState(getAuth());
+  const [user, loading, error] = useAuthState(auth);
   const LoginContextObject: ILoginPageContext = {
     user,
     loading,
