@@ -46,3 +46,26 @@ $spacings: (
 @function spacing($spacing) {
   @return map-get($spacings, $spacing);
 }
+
+:root {
+  --black: black;
+  --white: white;
+  --palette-red-600: #c6002b;
+  --palette-red-500: #cd212e;
+  --palette-red-400: #e22c3a;
+  --palette-red-300: #f4747c;
+  --palette-red-200: #f79096;
+  --palette-red-100: #f4adb1;
+  --palette-blue-600: #0055b7;
+  --palette-blue-500: #509da7;
+  --palette-blue-400: #30bac6;
+  --palette-blue-300: #68c8d5;
+  --palette-blue-200: #84dae5;
+  --palette-blue-100: #a3e2eb;
+  --palette-grey-600: #27292d;
+  --palette-grey-500: #3f4447;
+  --palette-grey-400: #717277;
+  --palette-grey-300: #a9afb2;
+  --palette-grey-200: #e6eaed;
+  --palette-grey-100: #f6f8f9;
+}
