@@ -1,6 +1,8 @@
 import { getAnalytics, isSupported } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import "firebase/compat/firestore";
+import firebase from "firebase/compat/app";
 import "firebaseui/dist/firebaseui.css";
 import getConfig from "next/config";
 const { publicRuntimeConfig } = getConfig();
@@ -21,6 +23,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+export const firestore = firebase.firestore();
 export const auth = getAuth(app);
 export const analytics = isSupported().then((yes) =>
   yes ? getAnalytics(app) : null
